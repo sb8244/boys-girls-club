@@ -4,6 +4,5 @@ html( ng-app=Rails.application.class.parent_name )
     title Boys and Girl Club
     = stylesheet_link_tag 'application', media: 'all'
   body
-    .container
-      div(ui-view)
+    = yield
     = javascript_include_tag 'application'
