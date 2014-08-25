@@ -1,0 +1,9 @@
+doctype 5
+html( ng-app=Rails.application.class.parent_name )
+  head
+    title Boys and Girl Club
+    = stylesheet_link_tag 'application', media: 'all'
+  body
+    .container
+      div(ui-view)
+    = javascript_include_tag 'application'
