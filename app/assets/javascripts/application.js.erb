@@ -26,13 +26,19 @@ var APP = angular.module('<%= Rails.application.class.parent_name %>', [
 APP.config(function($stateProvider, $urlRouterProvider, $locationProvider, RestangularProvider) {
   RestangularProvider.setBaseUrl("/api");
 
-  $urlRouterProvider.otherwise("/");
+  $urlRouterProvider.otherwise("/stories/featured");
 
   $stateProvider
-    .state('index', {
-      url: "/",
-      templateUrl: "index.html",
-      controller: "IndexController"
+    .state("stories", {
+      abstract: true,
+      url: "/stories",
+      templateUrl: "stories.html",
+      controller: "StoriesController"
+    })
+    .state('stories.featured', {
+      url: "/featured",
+      templateUrl: "stories/featured.html",
+      controller: "FeaturedStoriesController"
     });
 
   $locationProvider.html5Mode(true);
