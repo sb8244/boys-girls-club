@@ -1,2 +1,28 @@
-.container
-  div(ui-view)
+#mainSidebar.sidebar.sidebar-left parent-active-class="sidebar-left-in" toggleable=""
+  h1.app-name My App
+  .scrollable
+    .scrollable-content
+      .list-group bubble="" target="mainSidebar" toggle="off"
+        a.list-group-item href="#/"
+          | Home
+          i.fa.fa-chevron-right.pull-right
+.app
+  .navbar.navbar-app.navbar-absolute-top
+    .navbar-brand.navbar-brand-center yield-to="title"
+      span My App
+    .btn-group.pull-left
+      .btn.btn-navbar.sidebar-toggle ng-click="toggle('mainSidebar')"
+        i.fa.fa-bars
+        | Menu
+    .btn-group.pull-right yield-to="navbarAction"
+      .btn.btn-navbar
+        i.fa.fa-plus
+        | New
+  .navbar.navbar-app.navbar-absolute-bottom
+    .btn-group.justified
+      a.btn.btn-navbar.btn-icon-only ui-sref="index"
+        i.fa.fa-home.fa-navbar
+      a.btn.btn-navbar.btn-icon-only href="#/route2"
+        i.fa.fa-list.fa-navbar
+  .app-body
+    ng-view.app-content: ui-view

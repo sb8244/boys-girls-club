@@ -4,7 +4,6 @@
     "angular": "latest",
     "restangular": "latest",
     "angular-ui-router": "latest",
-    "bootstrap-sass-official": "latest",
     "mobile-angular-ui": "~1.1.0-beta.29"
   }
 }

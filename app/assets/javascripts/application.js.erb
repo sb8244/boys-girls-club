@@ -1,7 +1,6 @@
 /*
  ==== Standard ====
  = require jquery
- = require bootstrap-sprockets
 
  ==== Angular ====
  = require angular
@@ -10,6 +9,7 @@
  = require lodash
  = require restangular
  = require angular-ui-router
+ = require mobile-angular-ui/dist/js/mobile-angular-ui.min.js
 
  = require_self
  = require_tree ./angular/templates
@@ -19,7 +19,8 @@
 var APP = angular.module('<%= Rails.application.class.parent_name %>', [
   'ui.router',
   'templates',
-  'restangular'
+  'restangular',
+  'mobile-angular-ui'
 ]);
 
 APP.config(function($stateProvider, $urlRouterProvider, $locationProvider, RestangularProvider) {

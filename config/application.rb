@@ -16,8 +16,5 @@ Bundler.require(*Rails.groups)
 module Bgc
   class Application < Rails::Application
     config.assets.paths << Rails.root.join("vendor", "assets", "components")
-    config.assets.paths << Rails.root.join("vendor", "assets", "components", "bootstrap-sass-official", "assets", "stylesheets")
-    config.assets.paths << Rails.root.join("vendor", "assets", "components", "bootstrap-sass-official", "assets", "javascripts")
-    config.assets.paths << Rails.root.join("vendor", "assets", "components", "bootstrap-sass-official", "assets", "fonts")
   end
 end
