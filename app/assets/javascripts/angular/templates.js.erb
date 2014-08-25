@@ -5,7 +5,6 @@ angular.module('templates', []).run(function($templateCache) {
     templates = File.join(app_root, %w{templates ** *.slim})
 
     Dir.glob(templates).each do |f|
-
       depend_on(f)
       key = f.gsub(%r(^#{app_root}/templates/),'').gsub(/.slim$/, "")
       content = environment.find_asset(f).body

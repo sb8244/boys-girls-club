@@ -1,8 +1,9 @@
 {
   "name": "bgc",
   "dependencies": {
-    "angular": "~1.2.19",
-    "restangular": "~1.4.0",
-    "angular-ui-router": "0.2.10"
+    "angular": "latest",
+    "restangular": "latest",
+    "angular-ui-router": "latest",
+    "bootstrap-sass-official": "latest"
   }
 }
