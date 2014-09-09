@@ -15,7 +15,7 @@ Bundler.require(*Rails.groups)
 
 module Bgc
   class Application < Rails::Application
-    config.assets.precompile += %w( .svg .eot .woff .ttf )
     config.assets.paths << Rails.root.join("vendor", "assets", "components")
+    config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
   end
 end
