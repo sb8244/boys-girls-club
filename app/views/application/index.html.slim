@@ -6,6 +6,12 @@
         a.list-group-item ui-sref="stories.featured"
           | Featured Stories
           i.fa.fa-chevron-right.pull-right
+        a.list-group-item ui-sref="stories.user"
+          | User Submitted Stories
+          i.fa.fa-chevron-right.pull-right
+        a.list-group-item ui-sref="stories.new"
+          | Share Your Story
+          i.fa.fa-chevron-right.pull-right
 .app
   .navbar.navbar-app.navbar-absolute-top
     .navbar-brand.navbar-brand-center yield-to="title"
@@ -14,15 +20,15 @@
       .btn.btn-navbar.sidebar-toggle ng-click="toggle('mainSidebar')"
         i.fa.fa-bars
         |  Menu
-    .btn-group.pull-right yield-to="navbarAction"
+    /.btn-group.pull-right yield-to="navbarAction"
       .btn.btn-navbar
         i.fa.fa-plus
         | New
-  .navbar.navbar-app.navbar-absolute-bottom
+  /.navbar.navbar-app.navbar-absolute-bottom
     .btn-group.justified
       a.btn.btn-navbar.btn-icon-only ui-sref="stories.featured"
         i.fa.fa-home.fa-navbar
-      a.btn.btn-navbar.btn-icon-only href="#/route2"
-        i.fa.fa-list.fa-navbar
+      a.btn.btn-navbar.btn-icon-only href="stories.featured"
+        i.fa.fa-star.fa-navbar
   .app-body
     ng-view.app-content: ui-view

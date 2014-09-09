@@ -1,6 +1,7 @@
 /*
  ==== Standard ====
  = require jquery
+ = require bootstrap
 
  ==== Angular ====
  = require angular
@@ -9,6 +10,9 @@
  = require lodash
  = require restangular
  = require angular-ui-router
+ = require angular-animate
+ = require summernote
+ = require angular-summernote
  = require mobile-angular-ui/dist/js/mobile-angular-ui.min.js
 
  = require_self
@@ -18,9 +22,11 @@
 
 var APP = angular.module('<%= Rails.application.class.parent_name %>', [
   'ui.router',
+  'summernote',
   'templates',
   'restangular',
-  'mobile-angular-ui'
+  'mobile-angular-ui',
+  'ngAnimate'
 ]);
 
 APP.config(function($stateProvider, $urlRouterProvider, $locationProvider, RestangularProvider) {
@@ -36,10 +42,25 @@ APP.config(function($stateProvider, $urlRouterProvider, $locationProvider, Resta
       controller: "StoriesController"
     })
     .state('stories.featured', {
-      url: "/featured",
-      templateUrl: "stories/featured.html",
+      url: "/featured?id",
+      templateUrl: "stories/show.html",
       controller: "FeaturedStoriesController"
-    });
+    })
+    .state('stories.user', {
+      url: "/user?id",
+      templateUrl: "stories/show.html",
+      controller: "UserStoriesController"
+    })
+    .state('stories.new', {
+      url: "/new/choose",
+      templateUrl: "stories/new/type.html"
+    })
+    .state('stories.new_2', {
+      url: "/new/:type",
+      templateUrl: "stories/new/form.html",
+      controller: "NewStoryController"
+    })
+  ;
 
   $locationProvider.html5Mode(true);
 });

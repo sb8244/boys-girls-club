@@ -1,0 +1,18 @@
+div content-for="title" Share Your Story
+
+.scrollable
+  .scrollable-content.new-story
+    .col-xs-8.col-xs-offset-2.well.transparent
+      h2.text-center I am a
+
+    .iam.col-xs-8.col-xs-offset-2.text-center
+      button.btn.btn-primary.btn-lg.btn-block.success-border ui-sref="stories.new_2({type: 'mentee'})"
+        | Mentee
+
+    .iam.col-xs-8.col-xs-offset-2.text-center
+      button.btn.btn-primary.btn-lg.btn-block.info-border ui-sref="stories.new_2({type: 'mentor'})"
+        | Mentor
+
+    .iam.col-xs-8.col-xs-offset-2.text-center
+      button.btn.btn-primary.btn-lg.btn-block.danger-border ui-sref="stories.new_2({type: 'parent'})"
+        | Parent

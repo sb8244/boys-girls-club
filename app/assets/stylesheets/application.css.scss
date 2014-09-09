@@ -2,4 +2,178 @@
  *= require mobile-angular-ui/dist/css/mobile-angular-ui-hover.min.css
  *= require mobile-angular-ui/dist/css/mobile-angular-ui-base.min.css
  *= require mobile-angular-ui/dist/css/mobile-angular-ui-desktop.min.css
+ *= require summernote
  */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400);
+@import "overrides";
+@import "mixins";
+@import "editor";
+
+html, body, h1, h2, h3, h4, h5, h6  {
+  font-family: 'Open Sans', sans-serif !important;
+  font-weight: 300;
+}
+
+.animate-show {
+  -webkit-transition: all linear 0.10s;
+  transition: all linear 0.10s;
+
+  &.ng-hide {
+    opacity: 0;
+  }
+}
+
+.primary-border {
+  border-left: 5px solid $primary;
+}
+
+.info-border {
+  border-left: 5px solid $info;
+}
+
+.danger-border {
+  border-left: 5px solid $danger;
+}
+
+.success-border {
+  border-left: 5px solid $success;
+}
+
+/*
+ * FILTER A STORY
+ */
+
+.filters {
+  padding: 15px;
+  background: #eee;
+  border-bottom: 1px solid #bbb;
+
+  .filter-box {
+    //@extend .animate-show;
+  }
+  .row {
+    margin-bottom: 5px;
+  }
+}
+
+/*
+ * STORIES AND CONTENT
+ */
+
+.story-wrapper {
+  .content {
+    padding: 15px;
+    @extend .animate-show;
+  }
+
+  // Cool multi-colored borders alternated every 3rd story
+  &:nth-of-type(3n - 2) {
+    .story {
+      @extend .info-border;
+    }
+  }
+  &:nth-of-type(3n - 1) {
+    .story {
+      @extend .primary-border;
+    }
+  }
+  &:nth-of-type(3n - 0) {
+    .story {
+      @extend .danger-border;
+    }
+  }
+
+  .story {
+    height: 25%;
+    overflow: hidden;
+    margin-bottom: 0px;
+    cursor: pointer;
+
+    h1 {
+      font-size: 1.5em;
+    }
+
+    span.gray {
+      color: #999;
+    }
+
+    .row {
+      height: 100%;
+    }
+
+    .left-wrapper {
+      height: 100%;
+
+      div.image {
+        height: 100%;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        background-color: #aaa;
+      }
+    }
+
+    .list-group-item {
+      @include linear-gradient(#eee, #fff); // Stick in your favourite HEX colours
+    }
+  }
+}
+
+.new-story {
+  padding-top: 15px;
+  background: #eee;
+  background: url('/images/bg-blur.png');
+  background-position: center;
+  background-size: cover;
+
+  h2 {
+    margin-bottom: 0px;
+  }
+
+  .iam {
+    margin-bottom: 15px;
+    height: 20%;
+
+    .btn {
+      height: 100%;
+    }
+  }
+}
+
+/*
+ * SOCIAL BUTTONS / SHARE
+ */
+
+.share {
+  margin-top: 7px;
+
+  i.fa {
+    margin-right: 15px;
+  }
+}
+
+.share {
+  i {
+    cursor: pointer;
+  }
+}
+
+i.fa.fa-facebook-square {
+  color: #3B5998;
+}
+
+i.fa.fa-twitter-square {
+  color: #4099FF;
+}
+
+/*
+ * UTILITY
+ */
+.full-padding {
+  padding: 15px;
+}
+
+.well.transparent {
+  background-color: rgba(255, 255, 255, 0.85);
+}

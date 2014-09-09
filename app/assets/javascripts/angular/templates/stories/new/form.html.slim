@@ -1,0 +1,30 @@
+div content-for="title" {{title}}
+
+.scrollable
+  .scrollable-content.new-story.full-padding
+    p.well.transparent
+      ' Based on you being a {{story.role}}, we recommend answering the following questions.
+      ' These questions are designed to provide useful information to readers, but you do not
+      ' have to follow them.
+
+    .story-form
+      summernote config="options" ng-model="story.content"
+
+      .upload-image
+        input.form-control#file_upload type="file" onchange="angular.element(this).scope().previewImage(this)"
+        .well.clearfix ng-show="previewSrc"
+          .col-xs-6
+            span.preview ng-style="previewSrc"
+          .col-xs-6
+            p This is approximately your image thumbnail size.
+
+      .form-controls
+        input.form-control ng-model="story.name" placeholder="What is your full name?"
+
+      .form-controls
+        input.form-control ng-model="story.field" placeholder="What is your field?"
+
+      .form-controls
+        input.form-control ng-model="story.age" placeholder="How old are you?" type="number" min="13" max="120"
+
+    button.btn.btn-primary.btn-block ng-click="submit(story)" Submit

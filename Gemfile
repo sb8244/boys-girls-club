@@ -9,6 +9,7 @@ gem 'rails', '4.1.1'
 gem 'dotenv-rails'
 
 gem "active_model_serializers"
+gem "paperclip", "~> 4.2"
 
 # db
 gem 'sqlite3'
@@ -24,7 +25,7 @@ group :development do
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.0.0'
   gem 'factory_girl_rails'
   gem 'faker'
+  gem 'rspec-rails', '~> 3.0.0'
 end

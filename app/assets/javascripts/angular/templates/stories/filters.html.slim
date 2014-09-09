@@ -1,0 +1,26 @@
+div ng-controller="FiltersController"
+  .select-wrapper.row
+    .col-xs-3
+      label.control-label Age
+    .col-xs-9
+      select.form-control ng-model="filters.age" ng-options="age.value for age in ages"
+
+  .select-wrapper.row
+    .col-xs-3
+      label.control-label Ethnicity
+    .col-xs-9
+      select.form-control ng-model="filters.ethnicity" ng-options="e for e in ethnicities"
+
+  .select-wrapper.row
+    .col-xs-3
+      label.control-label Gender
+    .col-xs-9
+      select.form-control ng-model="filters.gender" ng-options="g for g in genders"
+
+  .select-wrapper.row
+    .col-xs-3
+      label.control-label Genre
+    .col-xs-9
+      select.form-control ng-model="filters.genre" ng-options="g for g in genres"
+
+  .btn.btn-block.btn-primary ng-click="prepareFilters(filters)" Find Stories

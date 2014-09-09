@@ -1,0 +1,34 @@
+div content-for="title" {{title}}
+
+.scrollable
+  .scrollable-content
+    .filters ng-show="id == null"
+      div.filter-box ng-include="'stories/filters.html'" ng-show="filtersActive"
+      div.row ng-hide="filtersActive"
+        .col-xs-3
+          button.btn.btn-info ng-show="type == 'featured'" ui-sref="stories.user"
+            i.fa.fa-star
+          button.btn.btn-info ng-show="type == 'user'" ui-sref="stories.featured"
+            i.fa.fa-user
+        .col-xs-9
+          button.btn.btn-primary.btn-block ng-click="filtersActive = !filtersActive" Filters
+    .filters ng-hide="id == null"
+      .row
+        .col-xs-8.col-xs-offset-2
+          button.btn.btn-primary.btn-block ng-click="reloadWithoutParams()" &laquo; All Stories
+
+    span.story-wrapper ng-repeat="story in stories | filter:filter"
+      .list-group.story ng-click="show(story)"
+        .list-group-item.row
+          .left-wrapper.col-xs-5
+            div.image ng-style="{'background-image': 'url({{story.image}})'}"
+          .right-wrapper.col-xs-7'
+            h1
+              ' {{story.name}}
+              span.gray {{story.field}}
+      div.content ng-show="selected == story.id"
+        span ng-bind-html="story.content"
+        .clearfix.share
+          div.pull-right
+            i.fa.fa-facebook-square.fa-3x
+            i.fa.fa-twitter-square.fa-3x

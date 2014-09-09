@@ -1,0 +1,22 @@
+.story-form {
+  .note-editor {
+    .note-editable {
+      background: white;
+    }
+  }
+
+  input, .note-editor {
+    margin-bottom: 10px;
+  }
+
+  .upload-image {
+    .preview {
+      height: 100px;
+      width: 100px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      display: inline-block;
+    }
+  }
+}

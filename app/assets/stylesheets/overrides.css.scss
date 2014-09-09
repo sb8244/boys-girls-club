@@ -1,0 +1,65 @@
+@import "mixins";
+
+// Variables
+
+$navbar-height: 50px;
+$primary: #0491D1;
+$info: #EFC164;
+$danger: red;
+$success: green;
+
+.app {
+  background: white;
+}
+
+.has-navbar-top .app-body {
+  padding-top: $navbar-height;
+}
+
+// Navbar & Sidebar
+
+.navbar-app {
+  min-height: $navbar-height;
+  background: $primary;
+  color: #fff;
+
+  .navbar-brand {
+    height: 100%;
+  }
+
+  .btn-navbar {
+    color: #fff;
+  }
+
+  .btn-navbar:hover, .btn:hover {
+    color: lighten($primary, 25%);
+  }
+
+  border-color: #aaa;
+}
+
+header.brand {
+  height: 150px;
+  position: relative;
+  z-index: 2;
+  background: white;
+}
+
+.sidebar {
+  background: #555;
+}
+
+// Buttons & Primary Colors
+
+.btn-primary {
+  @include override-button($primary);
+}
+
+.btn-info {
+  @include override-button($info);
+}
+
+// Modals
+.modal-backdrop {
+  display: none; // Mobile Angular UI is dicking around with this style...
+}
