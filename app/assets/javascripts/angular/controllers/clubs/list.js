@@ -1,4 +1,4 @@
-APP.controller("ClubsListController", function($scope, geolocation, $http, $timeout) {
+APP.controller("ClubsListController", function($scope, geolocation, $http) {
   $scope.title = "Find a Club";
   $scope.coords = null;
 

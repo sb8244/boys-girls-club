@@ -15,7 +15,7 @@ div content-for="title" {{title}}
         input.form-control ng-model="zipcode" placeholder="Or enter a zipcode"
 
     span.club-wrapper ng-repeat="club in results"
-      .list-group.club
+      .list-group.club ui-sref="clubs.show({id: club.global_id})"
         .list-group-item.row
           .col-xs-12'
             h3 {{ club.name }}

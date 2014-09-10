@@ -14,6 +14,7 @@
  = require summernote
  = require angular-summernote
  = require mobile-angular-ui/dist/js/mobile-angular-ui.min.js
+ = require angular-google-maps
 
  = require_self
  = require_tree ./angular/templates
@@ -27,7 +28,8 @@ var APP = angular.module('<%= Rails.application.class.parent_name %>', [
   'restangular',
   'mobile-angular-ui',
   'ngAnimate',
-  'geolocation'
+  'geolocation',
+  'google-maps'
 ]);
 
 APP.config(function($stateProvider, $urlRouterProvider, $locationProvider, RestangularProvider) {
@@ -70,6 +72,11 @@ APP.config(function($stateProvider, $urlRouterProvider, $locationProvider, Resta
         url: "/",
         templateUrl: "clubs/list.html",
         controller: "ClubsListController"
+      })
+      .state("clubs.show", {
+        url: "/:id",
+        templateUrl: "clubs/show.html",
+        controller: "ClubsShowController"
       })
   ;
 

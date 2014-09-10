@@ -6,6 +6,7 @@
     "angular-ui-router": "latest",
     "mobile-angular-ui": "~1.1.0-beta.29",
     "angular-animate": "latest",
-    "angular-summernote": "latest"
+    "angular-summernote": "latest",
+    "angular-google-maps": "latest"
   }
 }
