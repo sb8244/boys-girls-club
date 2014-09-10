@@ -1,0 +1,27 @@
+div content-for="title" {{title}}
+
+.scrollable
+  #club-list.scrollable-content
+    .row
+      .well.text-center.transparent.col-xs-8.col-xs-offset-2
+        h3 ng-if="coords === null"
+          | Detecting Location...
+        h3 ng-if="coords === false"
+          | Location could not be found. Enter your zipcode below.
+        h3 ng-if="coords && !results"
+          | Searching...
+        h3 ng-if="results"
+          | Clubs Found
+        input.form-control ng-model="zipcode" placeholder="Or enter a zipcode"
+
+    span.club-wrapper ng-repeat="club in results"
+      .list-group.club
+        .list-group-item.row
+          .col-xs-12'
+            h3 {{ club.name }}
+            span ng-include="'clubs/address.html'"
+            .pull-right
+              small click for more info
+            /div.pull-right
+              i.fa.fa-facebook-square.fa-3x
+              i.fa.fa-twitter-square.fa-3x

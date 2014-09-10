@@ -26,7 +26,8 @@ var APP = angular.module('<%= Rails.application.class.parent_name %>', [
   'templates',
   'restangular',
   'mobile-angular-ui',
-  'ngAnimate'
+  'ngAnimate',
+  'geolocation'
 ]);
 
 APP.config(function($stateProvider, $urlRouterProvider, $locationProvider, RestangularProvider) {
@@ -41,25 +42,35 @@ APP.config(function($stateProvider, $urlRouterProvider, $locationProvider, Resta
       templateUrl: "stories.html",
       controller: "StoriesController"
     })
-    .state('stories.featured', {
-      url: "/featured?id",
-      templateUrl: "stories/show.html",
-      controller: "FeaturedStoriesController"
+      .state('stories.featured', {
+        url: "/featured?id",
+        templateUrl: "stories/show.html",
+        controller: "FeaturedStoriesController"
+      })
+      .state('stories.user', {
+        url: "/user?id",
+        templateUrl: "stories/show.html",
+        controller: "UserStoriesController"
+      })
+      .state('stories.new', {
+        url: "/new/choose",
+        templateUrl: "stories/new/type.html"
+      })
+      .state('stories.new_2', {
+        url: "/new/:type",
+        templateUrl: "stories/new/form.html",
+        controller: "NewStoryController"
+      })
+    .state("clubs", {
+      abstract: true,
+      url: "/clubs",
+      templateUrl: "clubs.html"
     })
-    .state('stories.user', {
-      url: "/user?id",
-      templateUrl: "stories/show.html",
-      controller: "UserStoriesController"
-    })
-    .state('stories.new', {
-      url: "/new/choose",
-      templateUrl: "stories/new/type.html"
-    })
-    .state('stories.new_2', {
-      url: "/new/:type",
-      templateUrl: "stories/new/form.html",
-      controller: "NewStoryController"
-    })
+      .state("clubs.list", {
+        url: "/",
+        templateUrl: "clubs/list.html",
+        controller: "ClubsListController"
+      })
   ;
 
   $locationProvider.html5Mode(true);

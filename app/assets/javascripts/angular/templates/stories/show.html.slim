@@ -1,7 +1,7 @@
 div content-for="title" {{title}}
 
 .scrollable
-  .scrollable-content
+  #scroll-container.scrollable-content
     .filters ng-show="id == null"
       div.filter-box ng-include="'stories/filters.html'" ng-show="filtersActive"
       div.row ng-hide="filtersActive"
@@ -17,7 +17,7 @@ div content-for="title" {{title}}
         .col-xs-8.col-xs-offset-2
           button.btn.btn-primary.btn-block ng-click="reloadWithoutParams()" &laquo; All Stories
 
-    span.story-wrapper ng-repeat="story in stories | filter:filter"
+    span.story-wrapper ng-repeat="story in stories | filter:filter" id="{{'story-' + story.id}}"
       .list-group.story ng-click="show(story)"
         .list-group-item.row
           .left-wrapper.col-xs-5

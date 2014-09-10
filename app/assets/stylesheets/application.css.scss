@@ -64,7 +64,7 @@ html, body, h1, h2, h3, h4, h5, h6  {
 .story-wrapper {
   .content {
     padding: 15px;
-    @extend .animate-show;
+    //@extend .animate-show;
   }
 
   // Cool multi-colored borders alternated every 3rd story
@@ -116,7 +116,7 @@ html, body, h1, h2, h3, h4, h5, h6  {
     }
 
     .list-group-item {
-      @include linear-gradient(#eee, #fff); // Stick in your favourite HEX colours
+      @include linear-gradient(#eee, #fff);
     }
   }
 }
@@ -169,6 +169,43 @@ i.fa.fa-twitter-square {
 }
 
 /*
+ * Find a Club
+ */
+#club-list {
+  padding-top: 15px;
+  background: #eee;
+
+  .club-wrapper {
+    // Cool multi-colored borders alternated every 3rd story
+    &:nth-of-type(3n - 2) {
+      .club {
+        @extend .info-border;
+      }
+    }
+    &:nth-of-type(3n - 1) {
+      .club {
+        @extend .primary-border;
+      }
+    }
+    &:nth-of-type(3n - 0) {
+      .club {
+        @extend .danger-border;
+      }
+    }
+
+    .club {
+      overflow: hidden;
+      margin-bottom: 0px;
+      cursor: pointer;
+    }
+
+    .list-group-item {
+      @include linear-gradient(#eee, #fff);
+    }
+  }
+}
+
+/*
  * UTILITY
  */
 .full-padding {
@@ -177,4 +214,9 @@ i.fa.fa-twitter-square {
 
 .well.transparent {
   background-color: rgba(255, 255, 255, 0.85);
+}
+
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
 }

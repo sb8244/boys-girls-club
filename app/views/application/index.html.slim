@@ -12,10 +12,12 @@
         a.list-group-item ui-sref="stories.new"
           | Share Your Story
           i.fa.fa-chevron-right.pull-right
+        a.list-group-item ui-sref="clubs.list"
+          | Find a Club
+          i.fa.fa-chevron-right.pull-right
 .app
   .navbar.navbar-app.navbar-absolute-top
     .navbar-brand.navbar-brand-center yield-to="title"
-      span My App
     .btn-group.pull-left
       .btn.btn-navbar.sidebar-toggle ng-click="toggle('mainSidebar')"
         i.fa.fa-bars

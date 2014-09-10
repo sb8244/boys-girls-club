@@ -14,6 +14,10 @@ APP.controller("FeaturedStoriesController", function($scope, StoryFilter, Featur
       $scope.selected = null;
     } else {
       $scope.selected = story.id;
+      var $parentDiv = $("#scroll-container");
+      var $innerListItem = $("#story-" + story.id);
+      var position = $parentDiv.scrollTop() + $innerListItem.position().top;
+      $parentDiv.animate({ scrollTop :position });
     }
   };
 
