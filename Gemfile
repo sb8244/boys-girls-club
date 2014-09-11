@@ -10,6 +10,7 @@ gem 'dotenv-rails'
 
 gem "active_model_serializers"
 gem "paperclip", "~> 4.2"
+gem 'aws-sdk'
 
 # front end
 gem 'sass-rails', '~> 4.0.3'
