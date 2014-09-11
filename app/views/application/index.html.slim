@@ -1,5 +1,7 @@
 #mainSidebar.sidebar.sidebar-left parent-active-class="sidebar-left-in" toggleable=""
-  h1.app-name Boys and Girls Club
+  h1.app-name
+    img src="/images/logo.png"
+    |  Boys and Girls Club
   .scrollable
     .scrollable-content
       .list-group bubble="" target="mainSidebar" toggle="off"
@@ -26,11 +28,10 @@
       .btn.btn-navbar
         i.fa.fa-plus
         | New
-  /.navbar.navbar-app.navbar-absolute-bottom
+  .navbar.navbar-app.bottom.navbar-absolute-bottom.btn-info
     .btn-group.justified
-      a.btn.btn-navbar.btn-icon-only ui-sref="stories.featured"
-        i.fa.fa-home.fa-navbar
-      a.btn.btn-navbar.btn-icon-only href="stories.featured"
-        i.fa.fa-star.fa-navbar
+      a.btn.btn-navbar.btn-icon-only ui-sref="donate"
+        i.fa.fa-star
+        |  Donate Today
   .app-body
     ng-view.app-content: ui-view

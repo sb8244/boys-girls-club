@@ -78,6 +78,11 @@ APP.config(function($stateProvider, $urlRouterProvider, $locationProvider, Resta
         templateUrl: "clubs/show.html",
         controller: "ClubsShowController"
       })
+    .state("donate", {
+      url: "/donate",
+      templateUrl: "donate.html",
+      controller: "DonateController"
+    })
   ;
 
   $locationProvider.html5Mode(true);

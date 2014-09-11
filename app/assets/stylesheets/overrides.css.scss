@@ -36,6 +36,14 @@ $success: green;
   }
 
   border-color: #aaa;
+
+  &.bottom {
+    color: white;
+
+    .btn:hover {
+      color: darken(white, 5%);
+    }
+  }
 }
 
 header.brand {
@@ -43,6 +51,10 @@ header.brand {
   position: relative;
   z-index: 2;
   background: white;
+}
+
+.app-name {
+  font-size: 20px;
 }
 
 .sidebar {
