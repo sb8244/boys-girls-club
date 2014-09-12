@@ -1,0 +1,15 @@
+#step-three
+  .col-xs-8.col-xs-offset-2
+    .form-group ng-class="{'has-error': !details.card}"
+      label Credit Card Number
+      input.form-control type="text" ng-model="details.card" payments-type-model="details.type" payments-validate="card" payments-format="card"
+    .form-group ng-class="{'has-error': !details.expiry}"
+      label Expiration (mm/yyyy)
+      input.form-control type="text" ng-model="details.expiry" payments-validate="expiry" payments-format="expiry"
+    .form-group ng-class="{'has-error': !details.cvc}"
+      label CVC
+      input.form-control type="text" ng-model="details.cvc" payments-validate="cvc" payments-format="cvc"
+    .form-group ng-class="{'has-error': !details.name}"
+      label Name on Card
+      input.form-control type="text" ng-model="details.name"
+    button.btn.btn-block ng-click="submit()" ng-class="{'btn-primary': canSubmit, 'btn-default': !canSubmit}" ng-disabled="!canSubmit" Submit Donation

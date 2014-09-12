@@ -46,7 +46,7 @@ html, body, h1, h2, h3, h4, h5, h6  {
 
 .filters {
   padding: 15px;
-  background: #eee;
+  background: $app-background;
   border-bottom: 1px solid #bbb;
 
   .filter-box {
@@ -123,7 +123,7 @@ html, body, h1, h2, h3, h4, h5, h6  {
 
 .new-story {
   padding-top: 15px;
-  background: #eee;
+  background: $app-background;
   background: url('/images/bg-blur.png');
   background-position: center;
   background-size: cover;
@@ -168,12 +168,23 @@ i.fa.fa-twitter-square {
   color: #4099FF;
 }
 
+.social {
+  position: absolute;
+  right: 0px;
+  top: 5px;
+  width: 90px;
+
+  a {
+    margin-left: 7px;
+  }
+}
+
 /*
  * Find a Club
  */
 #club-list {
   padding-top: 15px;
-  background: #eee;
+  background: $app-background;
 
   .club-wrapper {
     // Cool multi-colored borders alternated every 3rd story
@@ -201,6 +212,19 @@ i.fa.fa-twitter-square {
 
     .list-group-item {
       @include linear-gradient(#eee, #fff);
+    }
+  }
+}
+/*
+ * Donations
+ */
+#donate-container {
+  background: $app-background;
+  padding-top: 15px;
+
+  #step-one {
+    .row {
+      margin-bottom: 10px;
     }
   }
 }

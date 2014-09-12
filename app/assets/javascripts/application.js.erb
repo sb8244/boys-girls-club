@@ -15,6 +15,7 @@
  = require angular-summernote
  = require mobile-angular-ui/dist/js/mobile-angular-ui.min.js
  = require angular-google-maps
+ = require angular-payments
 
  = require_self
  = require_tree ./angular/templates
@@ -29,7 +30,8 @@ var APP = angular.module('<%= Rails.application.class.parent_name %>', [
   'mobile-angular-ui',
   'ngAnimate',
   'geolocation',
-  'google-maps'
+  'google-maps',
+  'angularPayments'
 ]);
 
 APP.config(function($stateProvider, $urlRouterProvider, $locationProvider, RestangularProvider) {
@@ -79,10 +81,27 @@ APP.config(function($stateProvider, $urlRouterProvider, $locationProvider, Resta
         controller: "ClubsShowController"
       })
     .state("donate", {
+      abstract: true,
       url: "/donate",
       templateUrl: "donate.html",
       controller: "DonateController"
     })
+      .state("donate.amount", {
+        url: "",
+        templateUrl: "donate/one.html"
+      })
+      .state("donate.monthly", {
+        url: "",
+        templateUrl: "donate/two.html"
+      })
+      .state("donate.details", {
+        url: "",
+        templateUrl: "donate/three.html"
+      })
+      .state("donate.finish", {
+        url: "/done",
+        templateUrl: "donate/done.html"
+      })
   ;
 
   $locationProvider.html5Mode(true);

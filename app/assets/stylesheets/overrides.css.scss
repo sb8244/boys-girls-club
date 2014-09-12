@@ -7,6 +7,7 @@ $primary: #0491D1;
 $info: #EFC164;
 $danger: red;
 $success: green;
+$app-background : #eeeeee;
 
 .app {
   background: white;
@@ -42,6 +43,14 @@ $success: green;
 
     .btn:hover {
       color: darken(white, 5%);
+    }
+
+    .btn.pull-left {
+      float: left !important;
+    }
+
+    .btn.pull-right {
+      float: right !important;
     }
   }
 }
