@@ -1,3 +1,8 @@
+/*
+ * This service gives us featured stories, but caches them so they only load once
+ *  This removes load time after the first load and leads to a fast application
+ * Service must resolve with promises because this can all be async
+ */
 APP.service('FeaturedStories', function($sce, Restangular, $q) {
   var stories = null;
 

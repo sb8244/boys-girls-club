@@ -1,3 +1,8 @@
+/*
+ * This defines a filter function
+ *  Any property of a story that you want to filter on can be tied in below
+ *  following the same format
+ */
 APP.factory("StoryFilter", function() {
   return function StoryFilter($scope, story) {
     var filters = $scope.filters;

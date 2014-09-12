@@ -1,3 +1,6 @@
+/*
+ * Abstract controller that ties all of the donation steps into a single scope
+ */
 APP.controller("DonateController", function($scope, $state) {
   $scope.title = "Donate";
   $scope.amount = null;
@@ -14,6 +17,7 @@ APP.controller("DonateController", function($scope, $state) {
     $state.go('donate.details');
   };
 
+  // Credit card details let us know when we can submit our form
   $scope.$watch('details', function(details) {
     if(details.card && details.expiry && details.cvc && details.name) {
       $scope.canSubmit = true;

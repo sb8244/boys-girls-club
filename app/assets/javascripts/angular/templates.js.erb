@@ -1,3 +1,6 @@
+/*
+ * This ties into the asset pipeline to compile everything in templates into the $templateCache
+ */
 angular.module('templates', []).run(function($templateCache) {
   <%
     environment.context_class.instance_eval { include ActionView::Helpers::JavaScriptHelper }
