@@ -11,6 +11,7 @@ gem 'dotenv-rails'
 gem "active_model_serializers"
 gem "paperclip", "~> 4.2"
 gem 'aws-sdk'
+gem 'newrelic_rpm'
 
 # front end
 gem 'sass-rails', '~> 4.0.3'
