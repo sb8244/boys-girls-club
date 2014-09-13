@@ -15,7 +15,7 @@
  = require angular-summernote
  = require mobile-angular-ui/dist/js/mobile-angular-ui.min.js
  = require angular-payments
-  require angular-google-maps
+ = require angular-google-maps
 
  = require_self
  = require_tree ./angular/templates
@@ -30,7 +30,7 @@ var APP = angular.module('<%= Rails.application.class.parent_name %>', [
   'mobile-angular-ui',
   'ngAnimate',
   'geolocation',
-  //'google-maps',
+  'google-maps',
   'angularPayments'
 ]);
 
