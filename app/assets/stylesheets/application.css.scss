@@ -234,6 +234,18 @@ i.fa.fa-twitter-square {
 }
 
 /*
+ * Ways
+ */
+#ways-container {
+  padding-top: 15px;
+  background: $app-background;
+
+  .way-wrapper {
+    padding: 0px;
+  }
+}
+
+/*
  * UTILITY
  */
 .full-padding {

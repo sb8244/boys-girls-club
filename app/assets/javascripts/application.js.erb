@@ -14,8 +14,8 @@
  = require summernote
  = require angular-summernote
  = require mobile-angular-ui/dist/js/mobile-angular-ui.min.js
- = require angular-google-maps
  = require angular-payments
+  require angular-google-maps
 
  = require_self
  = require_tree ./angular/templates
@@ -30,7 +30,7 @@ var APP = angular.module('<%= Rails.application.class.parent_name %>', [
   'mobile-angular-ui',
   'ngAnimate',
   'geolocation',
-  'google-maps',
+  //'google-maps',
   'angularPayments'
 ]);
 
@@ -43,7 +43,7 @@ APP.config(function($stateProvider, $urlRouterProvider, $locationProvider, Resta
     .state("stories", {
       abstract: true,
       url: "/stories",
-      templateUrl: "stories.html",
+      templateUrl: "abstract.html",
       controller: "StoriesController"
     })
       .state('stories.featured', {
@@ -68,7 +68,7 @@ APP.config(function($stateProvider, $urlRouterProvider, $locationProvider, Resta
     .state("clubs", {
       abstract: true,
       url: "/clubs",
-      templateUrl: "clubs.html"
+      templateUrl: "abstract.html"
     })
       .state("clubs.list", {
         url: "/",
@@ -101,6 +101,16 @@ APP.config(function($stateProvider, $urlRouterProvider, $locationProvider, Resta
       .state("donate.finish", {
         url: "/done",
         templateUrl: "donate/done.html"
+      })
+    .state("ways", {
+      abstract: true,
+      url: "/100-ways",
+      templateUrl: "abstract.html"
+    })
+      .state("ways.list", {
+        url: "",
+        templateUrl: "ways/list.html",
+        controller: "WaysListController"
       })
   ;
 
