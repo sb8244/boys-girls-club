@@ -2,6 +2,7 @@ APP.controller("ClubsListController", function($scope, geolocation, $http) {
   $scope.title = "Find a Club";
   $scope.coords = null;
 
+  // Try to geolocate the user, but prepare for the fact that it will mostly fail
   geolocation.getLocation({timeout: 5000}).then(function(data){
     $scope.coords = { lat: data.coords.latitude, long: data.coords.longitude };
     query($scope.coords.lat, $scope.coords.long);
@@ -9,6 +10,7 @@ APP.controller("ClubsListController", function($scope, geolocation, $http) {
     $scope.coords = false;
   });
 
+  // When zipcode has a length of 5, we must geo-decode the zip and query for clubs at that zip
   $scope.$watch('zipcode', function(zipcode) {
     if (zipcode === undefined) { return; }
 
@@ -26,6 +28,7 @@ APP.controller("ClubsListController", function($scope, geolocation, $http) {
     }
   });
 
+  // Uses the cartodb API to query for active clubs in the USA
   function query(lat, long) {
     var sql = "SELECT * " +
     "FROM bgca_sites_2014_02_11 " +

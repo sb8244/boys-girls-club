@@ -10,6 +10,7 @@ APP.controller("ClubsShowController", function($scope, $http, $stateParams, $loc
     zoom: 15
   };
 
+  // When the club is loaded, grab it's geo location from it's address
   $scope.$watch('club', function(club) {
     if (club !== undefined) {
       var url = "http://maps.googleapis.com/maps/api/geocode/json?address=" + club.address_1 + ", " + club.zip_code;
@@ -26,6 +27,7 @@ APP.controller("ClubsShowController", function($scope, $http, $stateParams, $loc
 
   query();
 
+  // Query for an individual club
   function query() {
     var sql = "SELECT * " +
       "FROM bgca_sites_2014_02_11 " +
