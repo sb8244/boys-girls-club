@@ -27,4 +27,13 @@ div content-for="title" {{title}}
       .form-controls
         input.form-control ng-model="story.age" placeholder="How old are you?" type="number" min="13" max="120"
 
+      .well.transparent.well-sm
+        .form-controls.row
+          .col-xs-3: label Ethnicity
+          .col-xs-9: select.form-control ng-model="story.ethnicity" ng-options="e for e in ethnicities"
+
+        .form-controls.row
+          .col-xs-3: label Gender
+          .col-xs-9: select.form-control ng-model="story.gender" ng-options="g for g in genders"
+
     button.btn.btn-primary.btn-block ng-click="submit(story)" Submit

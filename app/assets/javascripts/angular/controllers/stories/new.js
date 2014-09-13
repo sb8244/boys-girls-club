@@ -5,6 +5,20 @@ APP.controller("NewStoryController", function($scope, $state, $stateParams, $tem
   var templateName = "questions/" + $stateParams.type + ".html";
   $scope.story = { role: $stateParams.type, content: $templateCache.get(templateName) };
 
+  $scope.ethnicities = [
+    "American Indian or Alaska Native",
+    "Asian",
+    "Black or African American",
+    "Hispanic or Latino",
+    "Native Hawaiian or Other Pacific Islander",
+    "White"
+  ];
+
+  $scope.genders = [
+    "Female",
+    "Male"
+  ];
+
   // Take in a file input and set the base64 image preview
   $scope.previewImage = function(input) {
     if (input.files && input.files[0]) {
@@ -33,7 +47,6 @@ APP.controller("NewStoryController", function($scope, $state, $stateParams, $tem
       formData.append(k, v);
     });
     UserStories.add(formData).then(function(story) {
-      console.log("navigate", story.id);
       $state.go("stories.user", {id: story.id});
     });
   };
