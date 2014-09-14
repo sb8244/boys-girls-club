@@ -19,7 +19,7 @@ div content-for="title" {{title}}
         .list-group-item.row
           .col-xs-12'
             h3 {{ club.name }}
-            span ng-include="'clubs/address.html'"
+            span club-address=true
             .pull-right
               small click for more info
             /div.pull-right

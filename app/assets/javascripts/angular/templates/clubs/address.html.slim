@@ -1,4 +1,6 @@
-address
+div
+  a ng-click="$event.stopPropagation()" ng-href="https://maps.google.com?q={{address}}" target="_blank" Get Directions with Google
+div
   | {{ club.address_1 | uppercase }}
   br ng-if="club.address_2"
   | {{ club.address_2 | uppercase }}

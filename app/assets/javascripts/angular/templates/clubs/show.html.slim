@@ -7,9 +7,9 @@ div content-for="title" {{title}}
         .list-group-item.row
           .col-xs-12
             h3 {{ club.name }}
+            .address club-address=true
             google-map zoom="map.zoom" center="map.center" draggable="true" options="{scrollwheel: false}"
               marker ng-if="marker" coords="marker.coords" idKey="marker.id"
-            span ng-include="'clubs/address.html'"
     .col-xs-8.col-xs-offset-2.text-center ng-if="club === false"
       h3 Club not found
       button.btn.btn-primary ui-sref="clubs.list" &laquo; Clubs Listing
