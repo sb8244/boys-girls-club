@@ -9,6 +9,6 @@ class CrawlersController < ApplicationController
   private
 
   def route
-    request.original_url.split("?")[0]
+    request.original_url#.split("?")[0]
   end
 end
