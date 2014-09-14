@@ -17,6 +17,7 @@
  = require mobile-angular-ui/dist/js/mobile-angular-ui.min.js
  = require angular-payments
  = require angular-google-maps
+ = require angular-socialshare
 
  = require_self
  = require_tree ./angular/templates
@@ -32,7 +33,8 @@ var APP = angular.module('<%= Rails.application.class.parent_name %>', [
   'ngAnimate',
   'geolocation',
   'google-maps',
-  'angularPayments'
+  'angularPayments',
+  'djds4rce.angular-socialshare'
 ]);
 
 APP.config(function($stateProvider, $urlRouterProvider, $locationProvider, RestangularProvider) {
@@ -117,4 +119,8 @@ APP.config(function($stateProvider, $urlRouterProvider, $locationProvider, Resta
 
   // This allows the user to have a proper history / browsing stack
   $locationProvider.html5Mode(true);
-});
+})
+
+.run(function($FB){
+  $FB.init('<%= ENV['FB_APP_ID'] %>');
+});;

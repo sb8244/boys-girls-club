@@ -1,8 +1,9 @@
-APP.controller("UserStoriesController", function($scope, $state, UserStories, StoryFilter, $stateParams) {
+APP.controller("UserStoriesController", function($scope, $window, UserStories, StoryFilter, $stateParams) {
   $scope.selected = null;
   $scope.filters = {};
   $scope.type = "user";
   $scope.title = "User Stories";
+  $scope.shareBase = $window.location.href + "?id=";
 
   $scope.id = $stateParams.id;
   UserStories.get().then(function(stories) {

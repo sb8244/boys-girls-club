@@ -30,5 +30,6 @@ div content-for="title" {{title}}
         span ng-bind-html="story.content"
         .clearfix.share
           div.pull-right
-            i.fa.fa-facebook-square.fa-3x
+            a facebook=true class="facebookShare" data-url='{{shareBase + story.id}}' data-shares='shares'
+              | {{shares}}
             i.fa.fa-twitter-square.fa-3x

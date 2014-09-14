@@ -9,6 +9,7 @@
     "angular-summernote": "latest",
     "angular-google-maps": "latest",
     "angular-payments": "latest",
-    "pnotify": "latest"
+    "pnotify": "latest",
+    "angular-socialshare": "latest"
   }
 }
