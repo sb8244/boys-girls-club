@@ -100,8 +100,13 @@ header.brand {
 
 .facebookShare {
   height: auto;
-  margin-right: 10px;
+  overflow: visible;
 }
 .facebookCount {
   display: none !important;
+}
+
+.tweet-wrapper {
+  position: relative;
+  bottom: -7px;
 }

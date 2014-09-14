@@ -154,10 +154,6 @@ html, body, h1, h2, h3, h4, h5, h6  {
 
 .share {
   margin-top: 7px;
-
-  i.fa {
-    margin-right: 15px;
-  }
 }
 
 .share {
@@ -259,6 +255,10 @@ i.fa.fa-twitter-square {
  */
 .full-padding {
   padding: 15px;
+}
+
+.pad-right {
+  margin-right: 7px;
 }
 
 .well.transparent {
