@@ -3,5 +3,12 @@ class CrawlersController < ApplicationController
 
   def story
     @story = Story.find(params[:id])
+    @route = route
+  end
+
+  private
+
+  def route
+    request.fullpath.split("?")[0]
   end
 end
