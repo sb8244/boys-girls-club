@@ -4,8 +4,7 @@ Rails.application.routes.draw do
   end
 
   constraints user_agent: /(facebookexternalhit|Twitterbot)/ do
-    get "stories/featured" => "crawlers#story"
-    get "stories/user" => "crawlers#story"
+    get "stories/:id" => "crawlers#story"
   end
 
   root "application#index"

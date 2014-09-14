@@ -3,9 +3,8 @@ APP.controller("FeaturedStoriesController", function($scope, $state, $window, St
   $scope.filters = {};
   $scope.type = "featured";
   $scope.title = "Featured Stories";
-  $scope.shareBase = $window.location.href + "?id=";
+  $scope.shareBase = $window.location.host + "/stories/";
 
-  $scope.id = $stateParams.id;
   FeaturedStories.get().then(function(stories) {
      $scope.stories = stories;
   });

@@ -50,14 +50,19 @@ APP.config(function($stateProvider, $urlRouterProvider, $locationProvider, Resta
       controller: "StoriesController"
     })
       .state('stories.featured', {
-        url: "/featured?id",
+        url: "/featured",
         templateUrl: "stories/show.html",
         controller: "FeaturedStoriesController"
       })
       .state('stories.user', {
-        url: "/user?id",
+        url: "/user",
         templateUrl: "stories/show.html",
         controller: "UserStoriesController"
+      })
+      .state('stories.show', {
+        url: "/:id",
+        templateUrl: "stories/show.html",
+        controller: "StoriesShowController"
       })
       .state('stories.new', {
         url: "/new/choose",

@@ -24,10 +24,6 @@ APP.factory("StoryFilter", function() {
       }
     }
 
-    if ($scope.id != null) {
-      keep = story.id == $scope.id; //overrides everything else
-    }
-
     return keep;
   };
 });

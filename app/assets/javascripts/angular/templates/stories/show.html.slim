@@ -12,7 +12,7 @@ div content-for="title" {{title}}
             i.fa.fa-user
         .col-xs-9
           button.btn.btn-primary.btn-block ng-click="filtersActive = !filtersActive" Filters
-    .filters ng-hide="id == null"
+    .filters ng-hide="id == null" ng-if="reloadWithoutParams"
       .row
         .col-xs-8.col-xs-offset-2
           button.btn.btn-primary.btn-block ng-click="reloadWithoutParams()" &laquo; All Stories
@@ -33,3 +33,4 @@ div content-for="title" {{title}}
             a facebook=true class="facebookShare" data-url='{{shareBase + story.id}}' data-shares='shares'
               | {{shares}}
             i.fa.fa-twitter-square.fa-3x
+            .btn.btn-xs.btn-primary ui-sref="stories.show({id: story.id})" Bookmarkable

@@ -3,9 +3,8 @@ APP.controller("UserStoriesController", function($scope, $window, UserStories, S
   $scope.filters = {};
   $scope.type = "user";
   $scope.title = "User Stories";
-  $scope.shareBase = $window.location.href + "?id=";
+  $scope.shareBase = $window.location.host + "/stories/";
 
-  $scope.id = $stateParams.id;
   UserStories.get().then(function(stories) {
     $scope.stories = stories;
   });
