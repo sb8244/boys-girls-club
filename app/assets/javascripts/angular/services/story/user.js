@@ -43,10 +43,26 @@ APP.service('UserStories', function($sce, Restangular, $q) {
             story.content = $sce.trustAsHtml(story.content);
             stories.push(story);
             promise.resolve(story);
+          }, function(error) {
+            if (error.status == 422) {
+              new PNotify({
+                title: "Error Sharing",
+                text: "Please fill out all fields to share your story.",
+                type: "error"
+              });
+            }
           });
       });
 
       return promise.promise;
+    },
+
+    isValid: function(story) {
+      var valid = true;
+      _.each(story, function(v, k) {
+        console.log(k, v);
+      });
+      return valid;
     }
   };
 

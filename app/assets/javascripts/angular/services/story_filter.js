@@ -13,6 +13,7 @@ APP.factory("StoryFilter", function() {
         keep = keep && story.age >= filters.age.min && story.age <= filters.age.max;
       }
       if (filters.ethnicity !== undefined) {
+        console.log(story.ethnicity, filters.ethnicity);
         keep = keep && story.ethnicity == filters.ethnicity;
       }
       if (filters.gender !== undefined) {

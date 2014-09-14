@@ -1,9 +1,13 @@
 APP.controller("NewStoryController", function($scope, $state, $stateParams, $templateCache, UserStories, Restangular) {
   $scope.title = "Share Your Story";
   $scope.previewSrc = null;
+  $scope.valid = false;
 
   var templateName = "questions/" + $stateParams.type + ".html";
-  $scope.story = { role: $stateParams.type, content: $templateCache.get(templateName) };
+  $scope.story = {
+    role: $stateParams.type,
+    content: $templateCache.get(templateName)
+  };
 
   $scope.ethnicities = [
     "American Indian or Alaska Native",
@@ -34,6 +38,10 @@ APP.controller("NewStoryController", function($scope, $state, $stateParams, $tem
     }
   };
 
+  $scope.$watch('story', function(story) {
+    console.log(UserStories.isValid(story));
+  });
+
   $scope.options = {
     height: 300,
     toolbar: [
@@ -41,11 +49,26 @@ APP.controller("NewStoryController", function($scope, $state, $stateParams, $tem
     ]
   };
 
+  var imageOverride = false;
+  var hasImage = false;
+
   $scope.submit = function(story) {
     var formData  = getFileFormData();
     _(story).each(function(v, k) {
       formData.append(k, v);
     });
+
+    // Try to prevent image-less stories, but users may opt to not give images
+    if (!hasImage) {
+      if(!imageOverride) {
+        imageOverride = true;
+        return new PNotify({
+          title: "Are You Sure?",
+          text: "This story has no image. Submit again to continue."
+        });
+      }
+    }
+
     UserStories.add(formData).then(function(story) {
       $state.go("stories.user", {id: story.id});
     });
@@ -54,7 +77,11 @@ APP.controller("NewStoryController", function($scope, $state, $stateParams, $tem
   function getFileFormData() {
     var file = $("#file_upload").parent().find(":file")[0].files[0];
     var formData = new FormData();
-    formData.append("image", file);
+    hasImage = false;
+    if (file) {
+      hasImage = true;
+      formData.append("image", file);
+    }
     return formData;
   }
 });

@@ -8,7 +8,7 @@ class Api::StoriesController < Api::BaseController
   end
 
   def create
-    respond_with :api, Story.create!(story_params)
+    respond_with :api, Story.create(story_params)
   end
 
   private

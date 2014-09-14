@@ -4,8 +4,9 @@ var Way = function(id) {
 
 APP.controller("WaysListController", function($scope) {
   $scope.title = "100 Ways";
-
   $scope.ways = [];
+
+  // The ways are number 1-100
   for(var i = 1; i <= 100; i++) {
     $scope.ways.push(new Way(i));
   }
