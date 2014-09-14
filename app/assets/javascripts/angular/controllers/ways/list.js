@@ -7,7 +7,17 @@ APP.controller("WaysListController", function($scope) {
   $scope.ways = [];
 
   // The ways are number 1-100
-  for(var i = 1; i <= 100; i++) {
+  var stepAmount = 5;
+  for(var i = 1; i <= stepAmount; i++) {
     $scope.ways.push(new Way(i));
   }
+
+  $scope.scroll = function() {
+    if ($scope.ways.length < 100) {
+      var size = $scope.ways.length;
+      for(var i = size + 1; i <= size + stepAmount; i++) {
+        $scope.ways.push(new Way(i));
+      }
+    }
+  };
 });
