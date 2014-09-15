@@ -7,9 +7,9 @@ ActiveAdmin.register Story do
       f.input :age
       f.input :field
       f.input :content, as: :html_editor
-      f.input :role
-      f.input :ethnicity
-      f.input :gender
+      f.input :role, as: :select, collection: Story.roles
+      f.input :ethnicity, as: :select, collection: Story.ethnicities
+      f.input :gender, as: :select, collection: Story.genders
       f.input :image
     end
     f.actions

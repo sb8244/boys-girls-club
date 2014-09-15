@@ -11,4 +11,23 @@ class Story < ActiveRecord::Base
   validates_presence_of :role
   validates_presence_of :ethnicity
   validates_presence_of :gender
+
+  def self.ethnicities
+    [
+      "American Indian or Alaska Native",
+      "Asian",
+      "Black or African American",
+      "Hispanic or Latino",
+      "Native Hawaiian or Other Pacific Islander",
+      "White"
+    ]
+  end
+
+  def self.roles
+    ['mentee', 'mentor', 'parent']
+  end
+
+  def self.genders
+    ['Female', 'Male']
+  end
 end
