@@ -4,6 +4,7 @@ ActiveAdmin.register Story do
   form multipart: true do |f|
     f.inputs "Project Details" do
       f.input :name
+      f.input :featured, as: :boolean
       f.input :age
       f.input :field
       f.input :content, as: :html_editor
