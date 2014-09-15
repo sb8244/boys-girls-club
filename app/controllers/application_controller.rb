@@ -5,4 +5,9 @@ class ApplicationController < ActionController::Base
 
   def index
   end
+
+  def authenticate_admin_user!
+    abort "X"
+    raise SecurityError unless current_user.try(:admin?)
+  end
 end

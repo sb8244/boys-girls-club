@@ -19,6 +19,13 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'slim-rails'
 
+# user
+gem 'devise'
+
+# admin
+gem 'activeadmin', github: 'activeadmin'
+gem 'active_admin_editor'
+
 group :development do
   gem 'spring-commands-rspec'
 end
