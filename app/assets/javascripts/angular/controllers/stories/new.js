@@ -23,6 +23,14 @@ APP.controller("NewStoryController", function($scope, $state, $stateParams, $tem
     "Male"
   ];
 
+  $scope.genres = [
+    "Athletics",
+    "Entertainment",
+    "Politics",
+    "Other",
+    "Technology"
+  ];
+
   // Take in a file input and set the base64 image preview
   $scope.previewImage = function(input) {
     if (input.files && input.files[0]) {
@@ -70,7 +78,7 @@ APP.controller("NewStoryController", function($scope, $state, $stateParams, $tem
     }
 
     UserStories.add(formData).then(function(story) {
-      $state.go("stories.user", {id: story.id});
+      $state.go("stories.show", {id: story.id});
     });
   };
 

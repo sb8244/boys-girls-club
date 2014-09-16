@@ -27,7 +27,10 @@ APP.controller("FiltersController", function($rootScope, $scope) {
 
   $scope.genres = [
     "All",
+    "Athletics",
+    "Entertainment",
     "Politics",
+    "Other",
     "Technology"
   ];
 

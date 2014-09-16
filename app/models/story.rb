@@ -31,4 +31,14 @@ class Story < ActiveRecord::Base
   def self.genders
     ['Female', 'Male']
   end
+
+  def self.genres
+    [
+      "Athletics",
+      "Entertainment",
+      "Politics",
+      "Other",
+      "Technology",
+    ]
+  end
 end

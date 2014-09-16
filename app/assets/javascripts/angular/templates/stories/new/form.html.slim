@@ -18,16 +18,19 @@ div content-for="title" {{title}}
           .col-xs-6
             p This is approximately your image thumbnail size.
 
-      .form-controls
-        input.form-control ng-model="story.name" placeholder="What is your full name?"
-
-      .form-controls
-        input.form-control ng-model="story.field" placeholder="What is your field?"
-
-      .form-controls
-        input.form-control ng-model="story.age" placeholder="How old are you?" type="number" min="13" max="120"
-
       .well.transparent.well-sm
+        .form-controls.row
+          .col-xs-3: label Full Name
+          .col-xs-9: input.form-control ng-model="story.name" placeholder="What is your full name?"
+
+        .form-controls.row
+          .col-xs-3: label Age
+          .col-xs-9: input.form-control ng-model="story.age" placeholder="How old are you?" type="number" min="13" max="120"
+
+        .form-controls.row
+          .col-xs-3: label Field
+          .col-xs-9: select.form-control ng-model="story.field" ng-options="g for g in genres"
+
         .form-controls.row
           .col-xs-3: label Ethnicity
           .col-xs-9: select.form-control ng-model="story.ethnicity" ng-options="e for e in ethnicities"

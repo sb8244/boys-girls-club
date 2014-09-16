@@ -145,6 +145,10 @@ html, body, h1, h2, h3, h4, h5, h6  {
 
   .form-controls.row {
     margin-bottom: 5px;
+
+    input {
+      margin-bottom: 0;
+    }
   }
 }
 
