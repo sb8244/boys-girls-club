@@ -1,5 +1,10 @@
 class Story < ActiveRecord::Base
-  validates :role, inclusion: { in: %w(mentor mentee parent) }
+
+  def self.roles
+    ['alumni', 'friend', 'parent']
+  end
+
+  validates :role, inclusion: { in: roles }
 
   has_attached_file :image
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
@@ -21,10 +26,6 @@ class Story < ActiveRecord::Base
       "Native Hawaiian or Other Pacific Islander",
       "White"
     ]
-  end
-
-  def self.roles
-    ['mentee', 'mentor', 'parent']
   end
 
   def self.genders
