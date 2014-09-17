@@ -34,7 +34,8 @@ var APP = angular.module('<%= Rails.application.class.parent_name %>', [
   'geolocation',
   'google-maps',
   'angularPayments',
-  'djds4rce.angular-socialshare'
+  'djds4rce.angular-socialshare',
+  'ngCookies'
 ]);
 
 APP.config(function($stateProvider, $urlRouterProvider, $locationProvider, RestangularProvider) {

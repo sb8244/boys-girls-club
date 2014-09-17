@@ -5,7 +5,7 @@ FactoryGirl.define do
     field { Faker::Name.title }
     age { Faker::Number.number(2) }
     featured false
-    role "mentor"
+    role "alumni"
     ethnicity "white"
     gender "male"
 

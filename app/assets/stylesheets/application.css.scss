@@ -156,6 +156,17 @@ html, body, h1, h2, h3, h4, h5, h6  {
  * SOCIAL BUTTONS / SHARE
  */
 
+.heart {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #bbb;
+
+  &.clicked {
+    color: lighten(red, 30%);
+  }
+}
+
 .share {
   margin-top: 7px;
 }

@@ -1,9 +1,10 @@
-APP.controller("FeaturedStoriesController", function($scope, $state, $window, StoryFilter, FeaturedStories, $stateParams) {
+APP.controller("FeaturedStoriesController", function(Heart, $scope, $state, $window, StoryFilter, FeaturedStories, $stateParams) {
   $scope.selected = null;
   $scope.filters = {};
   $scope.type = "featured";
   $scope.title = "Featured Stories";
   $scope.shareBase = $window.location.host + "/stories/";
+  $scope.heart = Heart;
 
   FeaturedStories.get().then(function(stories) {
      $scope.stories = stories;

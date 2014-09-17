@@ -16,3 +16,7 @@ div ng-if="club.phone_number"
 div ng-if="club.url"
   ' W:
   a target="_blank" href="{{club.url}}" {{club.url}}
+div
+  a.pad-right ng-if="club.twitter" href="{{club.twitter}}" target="_blank": i.fa.fa-twitter-square.fa-3x
+  a.pad-right ng-if="club.facebook" href="{{club.facebook}}" target="_blank": i.fa.fa-facebook-square.fa-3x
+  a.pad-right ng-if="club.youtube" href="{{club.youtube}}" target="_blank": i.fa.fa-youtube-square.fa-3x

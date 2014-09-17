@@ -20,6 +20,7 @@ div content-for="title" {{title}}
     span.story-wrapper ng-repeat="story in stories | filter:filter" id="{{'story-' + story.id}}"
       .list-group.story ng-click="show(story)"
         .list-group-item.row
+          span.heart ng-class="{clicked: story.hearted}" ng-click="heart.toggle(story); $event.stopPropagation()": i.fa.fa-heart.fa-2x
           .left-wrapper.col-xs-5
             div.image ng-style="{'background-image': 'url({{story.image}})'}"
           .right-wrapper.col-xs-7'

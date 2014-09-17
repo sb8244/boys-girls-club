@@ -1,4 +1,4 @@
-APP.controller("ClubsListController", function($scope, geolocation, $http) {
+APP.controller("ClubsListController", function($scope, geolocation, $http, ClubEnrichment) {
   $scope.title = "Find a Club";
   $scope.coords = null;
 
@@ -39,7 +39,7 @@ APP.controller("ClubsListController", function($scope, geolocation, $http) {
     var url = "//bgca.cartodb.com/api/v2/sql?q=" + sql;
     $http({method: 'GET', url: url}).
       success(function(data, status, headers, config) {
-        $scope.results = data.rows;
+        $scope.results = ClubEnrichment(data.rows);
       }).
       error(function(data, status, headers, config) {
         console.log(data);

@@ -1,4 +1,4 @@
-APP.controller("ClubsShowController", function($scope, $http, $stateParams, $location, $window, $document) {
+APP.controller("ClubsShowController", function($scope, $http, $stateParams, $location, $window, $document, ClubEnrichment) {
   $scope.title = "Viewing Club";
 
 
@@ -37,7 +37,7 @@ APP.controller("ClubsShowController", function($scope, $http, $stateParams, $loc
     $http({method: 'GET', url: url}).
       success(function(data, status, headers, config) {
         if (data.rows[0]) {
-          $scope.club = data.rows[0];
+          $scope.club = ClubEnrichment(data.rows)[0];
         } else {
           $scope.club = false;
         }

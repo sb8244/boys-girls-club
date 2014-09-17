@@ -4,12 +4,12 @@
  * Service must resolve with promises because this can all be async
  * You can also upload stories through this service
  */
-APP.service('UserStories', function($sce, Restangular, $q) {
+APP.service('UserStories', function($sce, Restangular, $q, ID) {
   var stories = null;
 
   var service = {
     load: function(promise) {
-      Restangular.all("stories").getList({featured: 0}).then(function(results) {
+      Restangular.all("stories").getList({featured: 0, uuid: ID()}).then(function(results) {
         stories = _(results).map(function(story) {
           story.content = $sce.trustAsHtml(story.content);
           return story;

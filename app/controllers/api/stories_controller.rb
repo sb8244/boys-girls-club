@@ -1,9 +1,17 @@
 class Api::StoriesController < Api::BaseController
   def index
-    respond_with :api, stories
+    list = stories.order(heart_count: :desc)
+    if params[:uuid]
+      list.each do |h|
+        h.hearted = true if hearted.include?(h)
+      end
+    end
+
+    respond_with :api, list
   end
 
   def show
+    story.hearted = true if story.hearts.where(uuid: params[:uuid]).exists?
     respond_with :api, story
   end
 
@@ -14,11 +22,15 @@ class Api::StoriesController < Api::BaseController
   private
 
   def stories
-    Story.where(featured: featured?)
+    @stories ||= Story.where(featured: featured?)
   end
 
   def story
-    Story.find(params[:id])
+    @story ||= Story.find(params[:id])
+  end
+
+  def hearted
+    params[:uuid] ? stories.joins(:hearts).where(hearts: { uuid: params[:uuid] }) : []
   end
 
   def featured?

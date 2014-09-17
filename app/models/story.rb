@@ -1,10 +1,11 @@
 class Story < ActiveRecord::Base
-
+  attr_accessor :hearted
   def self.roles
     ['alumni', 'friend', 'parent']
   end
 
   validates :role, inclusion: { in: roles }
+  has_many :hearts
 
   has_attached_file :image
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/

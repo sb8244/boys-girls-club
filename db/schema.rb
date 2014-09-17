@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140917011038) do
+ActiveRecord::Schema.define(version: 20140917024812) do
+
+  create_table "hearts", force: true do |t|
+    t.integer  "story_id"
+    t.string   "uuid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "hearts", ["story_id"], name: "index_hearts_on_story_id"
+  add_index "hearts", ["uuid", "story_id"], name: "index_hearts_on_uuid_and_story_id", unique: true
 
   create_table "stories", force: true do |t|
     t.string   "name",                           null: false
@@ -29,6 +39,7 @@ ActiveRecord::Schema.define(version: 20140917011038) do
     t.string   "gender"
     t.string   "ethnicity"
     t.string   "youtube"
+    t.integer  "heart_count",        default: 0
   end
 
   create_table "users", force: true do |t|

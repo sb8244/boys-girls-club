@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: 'json' } do
     resources :stories, only: [:index, :create, :show]
+    resources :hearts, only: [:index]
+    post 'hearts/toggle'
   end
 
   constraints user_agent: /(facebookexternalhit|Twitterbot)/ do

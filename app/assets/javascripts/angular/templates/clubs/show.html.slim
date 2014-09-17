@@ -10,6 +10,10 @@ div content-for="title" {{title}}
             .address club-address=true
             google-map zoom="map.zoom" center="map.center" draggable="true" options="{scrollwheel: false}"
               marker ng-if="marker" coords="marker.coords" idKey="marker.id"
+            div ng-if="club.hours"
+              br
+              h4 Hours
+              div ng-bind-html="club.hours"
     .col-xs-8.col-xs-offset-2.text-center ng-if="club === false"
       h3 Club not found
       button.btn.btn-primary ui-sref="clubs.list" &laquo; Clubs Listing
