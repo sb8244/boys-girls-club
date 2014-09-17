@@ -1,3 +1,17 @@
 == README
 
 Access it at bgc.herokuapp.com
+
+This app is a website designed for mobile and desktops which satisfies the BGCA's requirements for their application.
+Namely, it supports featured stories, user uploaded stories, find a club, 100 ways to spend time with your kid, and donation.
+Social is mixed throughout, where appropriate, and the user's experience is always held in high regard.
+
+Filters are designed so that users can filter both featured and user submitted stories by age, ethnicity, gender, and genre. 
+
+Users can heart a story which does not require login and will help to rank the most popular stories by the number of hearts.
+
+Find a club uses the real live BGCA data which means that every single club is in place just like it is on the current site. Directions, maps, social, hours, etc are hooked up. Social and hours are only available for the clubs that they provided as it is not on their current club data.
+
+100 ways to spend time with your kid works with the excellently made images to provide a content rich experience for viewers.
+
+The donation page is intuitive and visible from every other page, which is important for the BGCA.
