@@ -15,3 +15,5 @@ Find a club uses the real live BGCA data which means that every single club is i
 100 ways to spend time with your kid works with the excellently made images to provide a content rich experience for viewers.
 
 The donation page is intuitive and visible from every other page, which is important for the BGCA.
+
+This application can be deployed to Heroku and scaled to any size in a matter of minutes. It currently lives at bgc.herokuapp.com
