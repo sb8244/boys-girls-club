@@ -20,7 +20,7 @@ APP.factory("StoryFilter", function() {
         keep = keep && story.gender == filters.gender;
       }
       if (filters.genre !== undefined) {
-        keep = keep && story.genre == filters.genre;
+        keep = keep && story.field == filters.genre;
       }
     }
 
