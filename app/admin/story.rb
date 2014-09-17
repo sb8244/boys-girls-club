@@ -1,5 +1,5 @@
 ActiveAdmin.register Story do
-  permit_params :name, :age, :field, :content, :role, :ethnicity, :gender, :image, :featured
+  permit_params :name, :age, :field, :content, :role, :ethnicity, :gender, :image, :featured, :youtube
 
   form multipart: true do |f|
     f.inputs "Project Details" do
@@ -12,6 +12,7 @@ ActiveAdmin.register Story do
       f.input :gender, as: :select, collection: Story.genders
       f.input :field, as: :select, collection: Story.genres
       f.input :image
+      f.input :youtube
     end
     f.actions
   end

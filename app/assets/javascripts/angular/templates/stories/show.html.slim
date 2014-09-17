@@ -27,6 +27,9 @@ div content-for="title" {{title}}
               ' {{story.name}}
               span.gray {{story.field}}
       div.content ng-show="selected == story.id"
+        .row ng-if="story.youtube"
+          div.col-xs-12.col-sm-8.col-sm-offset-2
+            iframe width="100%" height="200" ng-src="{{'//www.youtube.com/embed/' + story.youtube}}" frameborder="0" allowfullscreen
         span ng-bind-html="story.content"
         .clearfix.share
           div.pull-right

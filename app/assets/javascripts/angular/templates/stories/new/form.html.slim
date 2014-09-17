@@ -20,6 +20,10 @@ div content-for="title" {{title}}
 
       .well.transparent.well-sm
         .form-controls.row
+          .col-xs-3: label Youtube Video ID
+          .col-xs-9: input.form-control ng-model="story.youtube" placeholder="optional"
+
+        .form-controls.row
           .col-xs-3: label Full Name
           .col-xs-9: input.form-control ng-model="story.name" placeholder="What is your full name?"
 

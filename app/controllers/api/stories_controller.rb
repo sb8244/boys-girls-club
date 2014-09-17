@@ -26,6 +26,6 @@ class Api::StoriesController < Api::BaseController
   end
 
   def story_params
-    params.permit(:name, :age, :field, :content, :image, :role, :gender, :ethnicity)
+    params.permit(:name, :age, :field, :content, :image, :role, :gender, :ethnicity, :youtube)
   end
 end
